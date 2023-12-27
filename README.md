@@ -35,29 +35,32 @@ This repo is derived from a homework assignment from the course COMPSCI 687: Rei
 
 ## Experiments
 
-1. **Best Policy with $\gamma = 0.9$ **
+1. **Best Policy with $\gamma = 0.9$**
+
    The Value Iteration Algorithm took 25 iterations to stop.
    
    The policy tries to avoid the water state. For the state on the left of the water, the agent goes from the top side over the obstacle. This is so that it can avoid the negative reward that the water state gives. For the Water State and the state to the right of the water state take the AR actions.
 
-   ![P1A: State Values and the Policy ($\gamma = 0.9$)](P1A.png){ width="200" }
-    <img src = https://github.com/ojasraundale/gridworld-world-value-iteration/blob/main/P1A.png width=80% height=80% alt="P1A: State Values and the Policy ($\gamma = 0.9$)">
+   <!-- ![P1A: State Values and the Policy ($\gamma = 0.9$)](P1A.png){ width="200" } -->
+    <img src = https://github.com/ojasraundale/gridworld-world-value-iteration/blob/main/P1A.png width=60% height=60% alt="P1A: State Values and the Policy ($\gamma = 0.9$)">  
 
-2. **Answer:**
-   As seen in figure \ref{P2A}, the policy at state (4,1) changes to AL (from AU). This is because of the new reduced discount, going through water (a negative reward) will cause a lot of reduction in the return. The agent will still get a positive but smaller reward if it totally ignores the water state and goes left. Whereas going up had a (5\%) chance that it would go to the water state and the agent absolutely wants to avoid it.
+2. **Changing $\gamma$ to 0.9**
+   As seen in figure [P2A](/P2A.png), the policy at state (4,1) changes to AL (from AU). This is because of the new reduced discount, going through water (a negative reward) will cause a lot of reduction in the return. The agent will still get a positive but smaller reward if it totally ignores the water state and goes left. Whereas going up had a (5\%) chance that it would go to the water state and the agent absolutely wants to avoid it.
 
    Even the value function changed and became close to 0 in the majority of the states. This is because due to the now longer path, the return it can get is very low but still positive. Unfortunately, the water state has a negative value as there is a chance that the agent halts in the same state and gets a negative reward.
 
    The algorithm this time took just 9 iterations to stop. This might be because due to the reduced $\gamma$, the state values are now reduced a lot and $\delta = 0.0001$ may not be enough to take into account this sensitivity. As evident, a few of the bottom right states have a 0.0000 state value. The state value should have been a non-zero number as the agent will reach the goal state but have a very low (non-zero) return. This is why the algorithm now converges in a fewer number of iterations.
 
-   ![P2A: State Values and the Policy $\gamma = 0.25$. Took 9 iterations.](P2A.png){ width="300" }
+   <!-- ![P2A: State Values and the Policy $\gamma = 0.25$. Took 9 iterations.](P2A.png){ width="300" } -->
+    <img src = https://github.com/ojasraundale/gridworld-world-value-iteration/blob/main/P2A.png width=60% height=60% alt="P2A: State Values and the Policy $\gamma = 0.25$. Took 9 iterations.">  
 
-3. **Answer:**
+3. **Adding a non-terminating 'gold' state having 5.0 reward at (0,2)**
    This policy totally ignores the ending GOAL state and in all the states chooses an action that leads the GOLD state. As the GOLD state is non-terminating, the optimal agent wants to stay in the GOLD state as much as it can and collect the GOLD in a never-ending episode. At the GOLD state, the action AU is chosen which will keep the agent in this state for 80+10 = 90\% of times. This can also be observed in the value function that all the nearby states have a value of about \~40.
 
    This version takes 103 iterations to converge.
 
-   ![P3A: State Values and the Policy for $\gamma = 0.9$. There is a 'gold' state having 5.0 reward at (0,2).](P3A.png)
+   <!-- ![P3A: State Values and the Policy for $\gamma = 0.9$. There is a 'gold' state having 5.0 reward at (0,2).](P3A.png) -->
+    <img src = https://github.com/ojasraundale/gridworld-world-value-iteration/blob/main/P3A.png width=60% height=60% alt="P3A: State Values and the Policy for $\gamma = 0.9$. There is a 'gold' state having 5.0 reward at (0,2).">
 
 4. **Answer:**
    Figure \ref{P4A} is the value function and policy identified by the algorithm.
