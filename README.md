@@ -20,7 +20,7 @@ This repo is derived from a homework assignment from the course COMPSCI 687: Rei
   - There is a *Water state* located at (4,2).
   - There is a *Goal state* located at (4,4).
 
-- **Rewards:** The reward is always 0, except when transitioning to (entering) the Goal state, in which case the reward is 10; or when transitioning to (entering) the Water state, in which case the reward is -10. To model this type of reward function, use a reward function in the form $R(S_t, A_t, S_{t+1})$, instead of $R(S_t, A_t)$. This requires a small modification to the Value Iteration update equation: $v_{i+1}(s) := max_{a in A} sum_{s'} p(s, a, s') ( R(s,a,s') + γ v_i(s') )$.
+- **Rewards:** The reward is always 0, except when transitioning to (entering) the Goal state, in which case the reward is 10; or when transitioning to (entering) the Water state, in which case the reward is -10. To model this type of reward function, use a reward function in the form $R(S_t, A_t, S_{t+1})$, instead of $R(S_t, A_t)$. This requires a small modification to the Value Iteration update equation: $v_{i+1}(s) := \max_{a \in \mathcal{A}} \sum_{s'} p(s, a, s') \left( R(s,a,s') + \gamma v_i(s') \right)$.
 
 - **Terminal State:** The Goal state is terminal. Any actions executed in this state always transition to s_infinity with reward 0.
 
