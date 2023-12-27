@@ -46,7 +46,7 @@ This repo is derived from a homework assignment from the course COMPSCI 687: Rei
 
 2. **Changing $\gamma$ to 0.9**
 
-   As seen in figure ![P2A](/P2A.png), the policy at state (4,1) changes to AL (from AU). This is because of the new reduced discount, going through water (a negative reward) will cause a lot of reduction in the return. The agent will still get a positive but smaller reward if it totally ignores the water state and goes left. Whereas going up had a (5\%) chance that it would go to the water state and the agent absolutely wants to avoid it.
+   As seen in figure, the policy at state (4,1) changes to AL (from AU). This is because of the new reduced discount, going through water (a negative reward) will cause a lot of reduction in the return. The agent will still get a positive but smaller reward if it totally ignores the water state and goes left. Whereas going up had a (5\%) chance that it would go to the water state and the agent absolutely wants to avoid it.
 
    Even the value function changed and became close to 0 in the majority of the states. This is because due to the now longer path, the return it can get is very low but still positive. Unfortunately, the water state has a negative value as there is a chance that the agent halts in the same state and gets a negative reward.
 
@@ -66,7 +66,7 @@ This repo is derived from a homework assignment from the course COMPSCI 687: Rei
 
 4. **Terminal 'gold' state at (0,2)**
 
-   Figure [P4A](/P4A.png) is the value function and policy identified by the algorithm.
+   The above figure is the value function and policy identified by the algorithm.
 
    Now the policy doesn't always want to go the GOLD state. The states on the left side of GOLD don't care that much if they end up in the GOLD state, but the states on the right prefer going down to the original end state. An explanation could be that $\gamma = 0.9$ still causes the original end state to get a higher return for the right states but for the left states, due to more number of steps required, they don't mind the smaller but quicker 5.0 reward.
 
@@ -75,12 +75,26 @@ This repo is derived from a homework assignment from the course COMPSCI 687: Rei
 
 
    Experiments with larger $\gamma$:
-   - (Figure \ref{P4B}) The first larger $\gamma$ was 0.9133 that changed state (0,1) policy from AR to AD. This might be because increasing the $\gamma$ now makes going for the long term higher reward much more feasible than the quick smaller reward due to the increased discount rate.
-   - (Figure \ref{P4C}) The next change is observed when $\gamma$ is taken as 0.935. In this case, the policy at (0,0) changes from AR to AD. Now the policy wants to take even fewer chances to accidentally go to the smaller reward gold state.
-   - (Figure \ref{P4D}) The next interesting change is observed at $\gamma = 0.95$. Here the policy at (0,3) changes from AD to AR. This means that the agent doesn't want to risk even the slightest accidentally going in the wrong direction and ensures this by going even further right.
+   
+   <img src = https://github.com/ojasraundale/gridworld-world-value-iteration/blob/main/P4B.png width=40% height=40% >
 
-   ![P4D: State Values and the Policy for $\gamma = 0.95$. There is a terminal 'gold' state having 5.0 reward at (0,2). \textbf{Policy changed in state (0,1),(0,0), and (0,3)}.](P4D.png)
+   - (Abobe figure) The first larger $\gamma$ was 0.9133 that changed state (0,1) policy from AR to AD. This might be because increasing the $\gamma$ now makes going for the long term higher reward much more feasible than the quick smaller reward due to the increased discount rate.
 
-5. **Answer:**
-   ![P5A: State Values and the Policy for $\gamma = 0.9$. The GOLD state at (0,2) now has a \textbf{reward of 4.483}.](P5A.png)
-   Figure \ref{P5A} shows the state value function and the associated policy when a reward of $R = 4.483$ was chosen as GOLD state reward (instead of 5). This was the highest smaller reward value that changed the policy from the one in figure \ref{P4A}. The state (0,1) now chooses AD instead of AR. This means the reward is now small enough that the optimal agent will prefer to take the longer path to get a high reward after a long time.
+   <img src = https://github.com/ojasraundale/gridworld-world-value-iteration/blob/main/P4C.png width=40% height=40% >
+
+   - (Above figure) The next change is observed when $\gamma$ is taken as 0.935. In this case, the policy at (0,0) changes from AR to AD. Now the policy wants to take even fewer chances to accidentally go to the smaller reward gold state.
+
+   <img src = https://github.com/ojasraundale/gridworld-world-value-iteration/blob/main/P4D.png width=40% height=40% >
+
+   - (Above figure) The next interesting change is observed at $\gamma = 0.95$. Here the policy at (0,3) changes from AD to AR. This means that the agent doesn't want to risk even the slightest accidentally going in the wrong direction and ensures this by going even further right.
+
+   <!-- ![P4D: State Values and the Policy for $\gamma = 0.95$. There is a terminal 'gold' state having 5.0 reward at (0,2). \textbf{Policy changed in state (0,1),(0,0), and (0,3)}.](P4D.png) -->
+
+5. **Giving the Gold State a reward of 4.483**
+   <!-- ![P5A: State Values and the Policy for $\gamma = 0.9$. The GOLD state at (0,2) now has a \textbf{reward of 4.483}.](P5A.png) -->
+    <img src = https://github.com/ojasraundale/gridworld-world-value-iteration/blob/main/P5A.png width=60% height=60% alt="P5A: State Values and the Policy for $\gamma = 0.9$. The GOLD state at (0,2) now has a reward of 4.483">
+
+   Above figure shows the state value function and the associated policy when a reward of $R = 4.483$ was chosen as GOLD state reward (instead of 5). This was the highest smaller reward value that changed the policy from the one in figure [P4A](https://github.com/ojasraundale/gridworld-world-value-iteration/blob/main/P4A.png). The state (0,1) now chooses AD instead of AR. This means the reward is now small enough that the optimal agent will prefer to take the longer path to get a high reward after a long time.
+
+
+
