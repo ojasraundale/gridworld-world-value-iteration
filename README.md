@@ -46,7 +46,7 @@ This repo is derived from a homework assignment from the course COMPSCI 687: Rei
 
 2. **Changing $\gamma$ to 0.9**
 
-   As seen in figure [P2A](/P2A.png), the policy at state (4,1) changes to AL (from AU). This is because of the new reduced discount, going through water (a negative reward) will cause a lot of reduction in the return. The agent will still get a positive but smaller reward if it totally ignores the water state and goes left. Whereas going up had a (5\%) chance that it would go to the water state and the agent absolutely wants to avoid it.
+   As seen in figure ![P2A](/P2A.png), the policy at state (4,1) changes to AL (from AU). This is because of the new reduced discount, going through water (a negative reward) will cause a lot of reduction in the return. The agent will still get a positive but smaller reward if it totally ignores the water state and goes left. Whereas going up had a (5\%) chance that it would go to the water state and the agent absolutely wants to avoid it.
 
    Even the value function changed and became close to 0 in the majority of the states. This is because due to the now longer path, the return it can get is very low but still positive. Unfortunately, the water state has a negative value as there is a chance that the agent halts in the same state and gets a negative reward.
 
