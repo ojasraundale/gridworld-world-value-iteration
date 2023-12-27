@@ -4,8 +4,8 @@ Value Iteration algorithm to find the optimal policy for the Gridworld Problem
 ## About
 This repo is derived from a homework assignment from the course COMPSCI 687: Reinforcement Learning, Fall '23 at the University of Massachusetts, Amherst. Following is the gridworld on which the value iteration algorithm is implemented:
 
-![gridworld](687_gridworld.png){ width="300" }
-<img src = https://github.com/ojasraundale/gridworld-world-value-iteration/blob/main/687_gridworld.png height="48" width="48">
+![gridworld](687_gridworld.png)
+<img src = https://github.com/ojasraundale/gridworld-world-value-iteration/blob/main/687_gridworld.png height="200" width="200">
 
 - **State:** The problem involves a 5x5 grid world where each state $(s=(r,c))$ describes the current coordinates/location of the agent. Here, r ranges from 0 to 4, representing the current row, and c ranges from 0 to 4, representing the current column. Refer to Figure [gridworld](#gridworld) for an example. In this figure, the topmost row is row zero, and the leftmost column is column zero—i.e., *State1* corresponds to (0,0), and *State16* corresponds to (3,1).
 
