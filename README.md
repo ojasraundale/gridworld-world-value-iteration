@@ -5,6 +5,7 @@ Value Iteration algorithm to find the optimal policy for the Gridworld Problem
 This repo is derived from a homework assignment from the course COMPSCI 687: Reinforcement Learning, Fall '23 at the University of Massachusetts, Amherst. Following is the gridworld on which the value iteration algorithm is implemented:
 
 ![gridworld](687_gridworld.png){ width="300" }
+<img src = https://github.com/ojasraundale/gridworld-world-value-iteration/blob/main/687_gridworld.png height="48" width="48">
 
 - **State:** The problem involves a 5x5 grid world where each state $(s=(r,c))$ describes the current coordinates/location of the agent. Here, r ranges from 0 to 4, representing the current row, and c ranges from 0 to 4, representing the current column. Refer to Figure [gridworld](#gridworld) for an example. In this figure, the topmost row is row zero, and the leftmost column is column zero—i.e., *State1* corresponds to (0,0), and *State16* corresponds to (3,1).
 
@@ -39,7 +40,7 @@ This repo is derived from a homework assignment from the course COMPSCI 687: Rei
    
    The policy tries to avoid the water state. For the state on the left of the water, the agent goes from the top side over the obstacle. This is so that it can avoid the negative reward that the water state gives. For the Water State and the state to the right of the water state take the AR actions.
 
-   ![P1A: State Values and the Policy ($\gamma = 0.9$)](/P1A.png){ width="200" }
+   ![P1A: State Values and the Policy ($\gamma = 0.9$)](P1A.png){ width="200" }
 
 2. **Answer:**
    As seen in figure \ref{P2A}, the policy at state (4,1) changes to AL (from AU). This is because of the new reduced discount, going through water (a negative reward) will cause a lot of reduction in the return. The agent will still get a positive but smaller reward if it totally ignores the water state and goes left. Whereas going up had a (5\%) chance that it would go to the water state and the agent absolutely wants to avoid it.
