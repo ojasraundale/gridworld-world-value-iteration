@@ -45,6 +45,7 @@ This repo is derived from a homework assignment from the course COMPSCI 687: Rei
     <img src = https://github.com/ojasraundale/gridworld-world-value-iteration/blob/main/P1A.png width=60% height=60% alt="P1A: State Values and the Policy ($\gamma = 0.9$)">  
 
 2. **Changing $\gamma$ to 0.9**
+
    As seen in figure [P2A](/P2A.png), the policy at state (4,1) changes to AL (from AU). This is because of the new reduced discount, going through water (a negative reward) will cause a lot of reduction in the return. The agent will still get a positive but smaller reward if it totally ignores the water state and goes left. Whereas going up had a (5\%) chance that it would go to the water state and the agent absolutely wants to avoid it.
 
    Even the value function changed and became close to 0 in the majority of the states. This is because due to the now longer path, the return it can get is very low but still positive. Unfortunately, the water state has a negative value as there is a chance that the agent halts in the same state and gets a negative reward.
@@ -55,6 +56,7 @@ This repo is derived from a homework assignment from the course COMPSCI 687: Rei
     <img src = https://github.com/ojasraundale/gridworld-world-value-iteration/blob/main/P2A.png width=60% height=60% alt="P2A: State Values and the Policy $\gamma = 0.25$. Took 9 iterations.">  
 
 3. **Adding a non-terminating 'gold' state having 5.0 reward at (0,2)**
+
    This policy totally ignores the ending GOAL state and in all the states chooses an action that leads the GOLD state. As the GOLD state is non-terminating, the optimal agent wants to stay in the GOLD state as much as it can and collect the GOLD in a never-ending episode. At the GOLD state, the action AU is chosen which will keep the agent in this state for 80+10 = 90\% of times. This can also be observed in the value function that all the nearby states have a value of about \~40.
 
    This version takes 103 iterations to converge.
@@ -62,12 +64,15 @@ This repo is derived from a homework assignment from the course COMPSCI 687: Rei
    <!-- ![P3A: State Values and the Policy for $\gamma = 0.9$. There is a 'gold' state having 5.0 reward at (0,2).](P3A.png) -->
     <img src = https://github.com/ojasraundale/gridworld-world-value-iteration/blob/main/P3A.png width=60% height=60% alt="P3A: State Values and the Policy for $\gamma = 0.9$. There is a 'gold' state having 5.0 reward at (0,2).">
 
-4. **Answer:**
-   Figure \ref{P4A} is the value function and policy identified by the algorithm.
+4. **Terminal 'gold' state at (0,2)**
+
+   Figure [P4A](/P4A.png) is the value function and policy identified by the algorithm.
 
    Now the policy doesn't always want to go the GOLD state. The states on the left side of GOLD don't care that much if they end up in the GOLD state, but the states on the right prefer going down to the original end state. An explanation could be that $\gamma = 0.9$ still causes the original end state to get a higher return for the right states but for the left states, due to more number of steps required, they don't mind the smaller but quicker 5.0 reward.
 
-   ![P4A: State Values and the Policy for $\gamma = 0.9$. There is a \textbf{terminal} 'gold' state having 5.0 reward at (0,2).](P4A.png)
+   <!-- ![P4A: State Values and the Policy for $\gamma = 0.9$. There is a terminal 'gold' state having 5.0 reward at (0,2).](P4A.png) -->
+    <img src = https://github.com/ojasraundale/gridworld-world-value-iteration/blob/main/P4A.png width=60% height=60% alt="P4A: State Values and the Policy for $\gamma = 0.9$. There is a \textbf{terminal} 'gold' state having 5.0 reward at (0,2).">
+
 
    Experiments with larger $\gamma$:
    - (Figure \ref{P4B}) The first larger $\gamma$ was 0.9133 that changed state (0,1) policy from AR to AD. This might be because increasing the $\gamma$ now makes going for the long term higher reward much more feasible than the quick smaller reward due to the increased discount rate.
